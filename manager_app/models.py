@@ -15,8 +15,7 @@ class Task(models.Model):
     status = models.CharField(choices=status_choices, max_length=100, default='new')
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
-    deadline = models.DateTimeField()
-    created_at = models.DateTimeField(auto_now_add=True)
+
 
     # Модель Task:
     # Добавить метод str, который возвращает название задачи.
