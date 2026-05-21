@@ -1,27 +1,3 @@
-# Реализовать модели:
-# Модель Task:
-# Описание: Задача для выполнения.
-# Поля:
-# title: Название задачи. Уникально для даты.
-# description: Описание задачи.
-# categories: Категории задачи. Многие ко многим.
-# status: Статус задачи. Выбор из: New, In progress, Pending, Blocked, Done
-# deadline: Дата и время дедлайн.
-# created_at: Дата и время создания. Автоматическое заполнение.
-# Модель SubTask:
-# Описание: Отдельная часть основной задачи (Task).
-# Поля:
-# title: Название подзадачи.
-# description: Описание подзадачи.
-# task: Основная задача. Один ко многим.
-# status: Статус задачи. Выбор из: New, In progress, Pending, Blocked, Done
-# deadline: Дата и время дедлайн.
-# created_at: Дата и время создания. Автоматическое заполнение.
-# Модель Category:
-# Описание: Категория выполнения.
-# Поля:
-# name: Название категории.
-
 from django.db import models
 
 class Task(models.Model):
@@ -32,6 +8,7 @@ class Task(models.Model):
         ('blocked', 'Blocked'),
         ('done', 'Done'),
     ]
+
     title = models.CharField(max_length=100)
     description = models.TextField()
     categories = models.ManyToManyField('Category', related_name='tasks')
@@ -41,6 +18,28 @@ class Task(models.Model):
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # Модель Task:
+    # Добавить метод str, который возвращает название задачи.
+    # Добавить класс Meta с настройками:
+    # Имя таблицы в базе данных: 'task_manager_task'.
+    # Сортировка по убыванию даты создания.
+    # Человекочитаемое имя модели: 'Task'.
+    # Уникальность по полю 'title'.
+
+    def __str__(self):
+         return self.title
+
+    class Meta:
+        db_table = 'task_manager_task'
+        ordering = ['-created_at']
+        verbose_name = 'Task'
+        indexes = [
+            models.Index(fields=['title']),
+        ]
+
+
+
+
 class SubTask(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -49,6 +48,49 @@ class SubTask(models.Model):
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # Модель SubTask:
+    # Добавить метод str, который возвращает название подзадачи.
+    # Добавить класс Meta с настройками:
+    # Имя таблицы в базе данных: 'task_manager_subtask'.
+    # Сортировка по убыванию даты создания.
+    # Человекочитаемое имя модели: 'SubTask'.
+    # Уникальность по полю 'title'.
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        db_table = 'task_manager_subtask'
+        ordering = ['-created_at']
+        verbose_name = 'Subtask'
+        indexes = [
+            models.Index(fields=['title']),
+        ]
+
+
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
+
+    # Модель Category:
+    # Добавить метод str, который возвращает название категории.
+    # Добавить класс Meta с настройками:
+    # Имя таблицы в базе данных: 'task_manager_category'.
+    # Человекочитаемое имя модели: 'Category'.
+    # Уникальность по полю 'name'.
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'task_manager_category'
+        verbose_name = 'Category'
+        indexes = [
+            models.Index(fields=['name']),
+        ]
+
+
+
+
+
 
