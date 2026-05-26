@@ -9,7 +9,7 @@ class Task(models.Model):
         ('done', 'Done'),
     ]
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100,unique=True)
     description = models.TextField()
     categories = models.ManyToManyField('Category', related_name='tasks')
     status = models.CharField(choices=status_choices, max_length=100, default='new')
@@ -32,15 +32,14 @@ class Task(models.Model):
         db_table = 'task_manager_task'
         ordering = ['-created_at']
         verbose_name = 'Task'
-        indexes = [
-            models.Index(fields=['title']),
-        ]
+
 
 
 
 
 class SubTask(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100,unique=True)
+    description = models.TextField()
     description = models.TextField()
     task = models.ForeignKey(Task, related_name='subtasks', on_delete=models.CASCADE)
     status = models.CharField(choices=Task.status_choices, max_length=100, default='new')
@@ -62,14 +61,12 @@ class SubTask(models.Model):
         db_table = 'task_manager_subtask'
         ordering = ['-created_at']
         verbose_name = 'Subtask'
-        indexes = [
-            models.Index(fields=['title']),
-        ]
+
 
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,unique=True)
 
     # Модель Category:
     # Добавить метод str, который возвращает название категории.
@@ -84,9 +81,8 @@ class Category(models.Model):
     class Meta:
         db_table = 'task_manager_category'
         verbose_name = 'Category'
-        indexes = [
-            models.Index(fields=['name']),
-        ]
+
+
 
 
 
