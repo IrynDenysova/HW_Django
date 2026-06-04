@@ -16,7 +16,7 @@ from manager_app.serializers.TaskDetails import SubTaskSerializer
 
 
 class SubTaskListCreateView(APIView):
-    
+
     def post(self, request):
         serializer = SubTaskCreateSerializer(data=request.data)
         if serializer.is_valid():
