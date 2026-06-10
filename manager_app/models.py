@@ -9,25 +9,13 @@ class Task(models.Model):
         ('done', 'Done'),
     ]
 
-    days_of_week = [
-        ('monday', 'Monday'),
-        ('tuesday', 'Tuesday'),
-        ('wednesday', 'Wednesday'),
-        ('thursday', 'Thursday'),
-        ('friday', 'Friday'),
-        ('saturday', 'Saturday'),
-        ('sunday', 'Sunday'),
-    ]
-
     title = models.CharField(max_length=100,unique=True)
     description = models.TextField()
     categories = models.ManyToManyField('Category', related_name='tasks')
     status = models.CharField(choices=status_choices, max_length=100, default='new')
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
-    days_of_week = models.CharField(choices=days_of_week, max_length=100,
-                                    default='monday',null=True,
-                                    blank=True,verbose_name="Day of Week")
+
 
     # Модель Task:
     # Добавить метод str, который возвращает название задачи.
@@ -51,6 +39,7 @@ class Task(models.Model):
 
 class SubTask(models.Model):
     title = models.CharField(max_length=100,unique=True)
+    description = models.TextField()
     description = models.TextField()
     task = models.ForeignKey(Task, related_name='subtasks', on_delete=models.CASCADE)
     status = models.CharField(choices=Task.status_choices, max_length=100, default='new')
