@@ -2,11 +2,14 @@ from django.db.models import Q, Count
 from django.utils import timezone
 from rest_framework.decorators import api_view
 from rest_framework.request import Request
-from rest_framework.response import Response
 from rest_framework import status
+
 
 from manager_app.models import Task
 from manager_app.serializers import TaskSerializer
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 
 @api_view(['POST'])
@@ -19,11 +22,30 @@ def create_task(request):
 
 
 
-@api_view(['GET'])
-def get_tasks(request):
-    tasks = Task.objects.all()
-    serializer = TaskSerializer(tasks, many=True)
-    return Response(serializer.data)
+# Задание 1:
+# Написать, или обновить, если уже есть, эндпоинт на получение списка всех задач по дню недели.
+# Если никакой параметр запроса не передавался - по умолчанию выводить все записи.
+# Если был передан день недели (например вторник) - выводить список задач только на этот день недели.
+# @api_view(['GET'])
+# def get_tasks(request):
+#     tasks = Task.objects.all()
+#     serializer = TaskSerializer(tasks, many=True)
+#     return Response(serializer.data)
+
+class DayOfTasksAPIView(APIView):
+    def get(self, request):
+        day = request.query_params.get('days_of_tasks')
+        if day:
+            tasks = Task.objects.filter(days_of_tasks=day.lower())
+        else:
+            tasks = Task.objects.all()
+        if not tasks:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        serializer = TaskSerializer(tasks, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
 
 
 
