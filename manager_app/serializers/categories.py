@@ -11,6 +11,7 @@ from enum import unique
 from rest_framework import serializers
 from manager_app.models import Category
 
+
 class CategoryCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
@@ -23,7 +24,12 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
              raise serializers.ValidationError(
                 {"name": "Категория с таким названием уже существует"})
         return super().create(validated_data)
-    
+
+
+class CategoryUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['id', 'name']
 
     def update(self, instance, validated_data):
         name = validated_data.get("name", instance.name)
@@ -32,6 +38,12 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 {"name": "Категория с таким названием уже существует"})
         return super().update(instance, validated_data)
+
+
+class CategoryListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['id', 'name']
 
 
 

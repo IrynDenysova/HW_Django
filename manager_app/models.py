@@ -1,4 +1,8 @@
 from django.db import models
+from django.utils import timezone
+
+from manager_app.manager import SoftDeleteManager
+
 
 class Task(models.Model):
     status_choices = [
@@ -78,6 +82,15 @@ class SubTask(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100,unique=True)
+    is_deleted = models.BooleanField(default=False,)
+    deleted_at = models.DateTimeField(null=True)
+
+    objects = SoftDeleteManager()
+
+    def delete(self , *args, **kwargs):
+        self.is_deleted = True
+        self.deleted_at = timezone.now()
+        self.save()
 
     # Модель Category:
     # Добавить метод str, который возвращает название категории.
