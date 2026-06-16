@@ -17,3 +17,5 @@ urlpatterns = [
     path("subtasks/filter/", SubTaskListCreateView.as_view(), name="subtask-filtered-list"),
 
 ]
+
+urlpatterns += router.urls
