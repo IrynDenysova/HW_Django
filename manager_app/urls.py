@@ -1,6 +1,12 @@
 from django.urls import path
+from rest_framework.routers import DefaultRouter
+
+from manager_app.views.categories import CategoryViewSet
 from manager_app.views.subtasks import SubTaskListCreateView
 from manager_app.views.tasks import create_task, get_id_task, get_tasks_status, DayOfTasksAPIView
+
+router = DefaultRouter()
+router.register(r'categories' , CategoryViewSet)
 
 urlpatterns = [
     path('tasks/create/', create_task),
@@ -11,3 +17,5 @@ urlpatterns = [
     path("subtasks/filter/", SubTaskListCreateView.as_view(), name="subtask-filtered-list"),
 
 ]
+
+urlpatterns += router.urls
