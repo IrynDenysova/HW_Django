@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 from environ import Env
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -133,3 +134,68 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'paginators.CustomCursorPaginator',
+}
+
+
+LOGS_DIR = BASE_DIR / "logs"
+LOGS_DIR.mkdir(exist_ok=True)
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "[{levelname}] {asctime} {name}: {message}",
+            "style": "{",
+        },
+        "verbose": {
+            "format": "[{levelname}] {asctime} {name} | module={module} | "
+                      "process={process:d} | thread={thread:d} | {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+            "level": "INFO",
+        },
+
+        "http_file": {
+            "class": "logging.FileHandler",
+            "filename": LOGS_DIR / "http_logs.log",
+            "formatter": "verbose",
+            "level": "INFO",
+            "encoding": "utf-8",
+        },
+        "db_file": {
+            "class": "logging.FileHandler",
+            "filename": LOGS_DIR / "db_logs.log",
+            "formatter": "verbose",
+            "level": "DEBUG",
+            "encoding": "utf-8",
+        },
+    },
+
+    "loggers": {
+        "django.server": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "django.request": {
+            "handlers": ["http_file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "django.db.backends": {
+            "handlers": ["db_file"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+    },
+}
