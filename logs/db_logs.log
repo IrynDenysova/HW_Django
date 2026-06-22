@@ -1,0 +1,45 @@
+[DEBUG] 2026-06-22 15:30:37,299 django.db.backends | module=utils | process=42421 | thread=6154907648 | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+[DEBUG] 2026-06-22 15:30:37,300 django.db.backends | module=utils | process=42421 | thread=6154907648 | (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[DEBUG] 2026-06-22 15:34:25,394 django.db.backends | module=utils | process=42506 | thread=6155022336 | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+[DEBUG] 2026-06-22 15:34:25,395 django.db.backends | module=utils | process=42506 | thread=6155022336 | (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[DEBUG] 2026-06-22 15:35:14,984 django.db.backends | module=utils | process=42526 | thread=6179008512 | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+[DEBUG] 2026-06-22 15:35:14,985 django.db.backends | module=utils | process=42526 | thread=6179008512 | (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[DEBUG] 2026-06-22 15:37:58,215 django.db.backends | module=utils | process=42554 | thread=6108737536 | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+[DEBUG] 2026-06-22 15:37:58,217 django.db.backends | module=utils | process=42554 | thread=6108737536 | (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[DEBUG] 2026-06-22 15:41:09,083 django.db.backends | module=utils | process=42590 | thread=6173601792 | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+[DEBUG] 2026-06-22 15:41:09,084 django.db.backends | module=utils | process=42590 | thread=6173601792 | (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[DEBUG] 2026-06-22 15:55:33,440 django.db.backends | module=utils | process=42793 | thread=6148124672 | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+[DEBUG] 2026-06-22 15:55:33,442 django.db.backends | module=utils | process=42793 | thread=6148124672 | (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[DEBUG] 2026-06-22 15:59:44,180 django.db.backends | module=utils | process=42793 | thread=6181777408 | (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'iryna' LIMIT 21; args=('iryna',); alias=default
+[DEBUG] 2026-06-22 16:01:33,330 django.db.backends | module=utils | process=42912 | thread=8492523136 | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+[DEBUG] 2026-06-22 16:01:33,331 django.db.backends | module=utils | process=42912 | thread=8492523136 | (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[DEBUG] 2026-06-22 16:01:33,331 django.db.backends | module=utils | process=42912 | thread=8492523136 | (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'irynadenysova' LIMIT 21; args=('irynadenysova',); alias=default
+[DEBUG] 2026-06-22 16:01:43,623 django.db.backends | module=utils | process=42912 | thread=8492523136 | (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'iryna' LIMIT 21; args=('iryna',); alias=default
+[DEBUG] 2026-06-22 16:02:10,497 django.db.backends | module=utils | process=42912 | thread=8492523136 | (0.001) INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES ('pbkdf2_sha256$1200000$j8f2qiovYwMdBpvxKEvstM$c5Cduc/kEVeHxzSNBXBT96inQqr8Y2GsOLbn64EzH9o=', NULL, 1, 'iryna', '', '', '', 1, 1, '2026-06-22 16:02:10.373877') RETURNING "auth_user"."id"; args=('pbkdf2_sha256$1200000$j8f2qiovYwMdBpvxKEvstM$c5Cduc/kEVeHxzSNBXBT96inQqr8Y2GsOLbn64EzH9o=', None, True, 'iryna', '', '', '', True, True, '2026-06-22 16:02:10.373877'); alias=default
+[DEBUG] 2026-06-22 16:02:23,764 django.db.backends | module=utils | process=42952 | thread=6109671424 | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+[DEBUG] 2026-06-22 16:02:23,765 django.db.backends | module=utils | process=42952 | thread=6109671424 | (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[DEBUG] 2026-06-22 16:02:35,081 django.db.backends | module=utils | process=42952 | thread=6126497792 | (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'iryna' LIMIT 21; args=('iryna',); alias=default

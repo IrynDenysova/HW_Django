@@ -1,8 +1,7 @@
 from django.db.models import Q, Count
 from django.utils import timezone
-from rest_framework.decorators import api_view
-from rest_framework.request import Request
-from rest_framework import status
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 from manager_app.models import Task
@@ -13,6 +12,7 @@ from rest_framework.views import APIView
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticatedOrReadOnly])
 def create_task(request):
     serializer = TaskSerializer(data=request.data)
     if serializer.is_valid():
@@ -22,17 +22,8 @@ def create_task(request):
 
 
 
-# Задание 1:
-# Написать, или обновить, если уже есть, эндпоинт на получение списка всех задач по дню недели.
-# Если никакой параметр запроса не передавался - по умолчанию выводить все записи.
-# Если был передан день недели (например вторник) - выводить список задач только на этот день недели.
-# @api_view(['GET'])
-# def get_tasks(request):
-#     tasks = Task.objects.all()
-#     serializer = TaskSerializer(tasks, many=True)
-#     return Response(serializer.data)
-
 class DayOfTasksAPIView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     def get(self, request):
         day = request.query_params.get('days_of_tasks')
         if day:
@@ -46,11 +37,8 @@ class DayOfTasksAPIView(APIView):
 
 
 
-
-
-
-
 @api_view(['GET'])
+@permission_classes([IsAuthenticatedOrReadOnly])
 def get_id_task(request, pk):
     try:
         task = Task.objects.get(pk=pk)
@@ -65,10 +53,10 @@ def get_id_task(request, pk):
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticatedOrReadOnly])
 def get_tasks_status(request):
 
     now = timezone.now()
-
 
     stats = Task.objects.aggregate(
         total_tasks=Count('id'),

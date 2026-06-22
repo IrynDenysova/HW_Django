@@ -1,6 +1,7 @@
 from django.db.models import Count
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.request import Request
 from rest_framework.response import Response
 
@@ -10,6 +11,7 @@ from manager_app.serializers.categories import CategoryListSerializer, CategoryC
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = Category.objects.all()
     def get_serializer_class(self):
         if self.action == 'list':

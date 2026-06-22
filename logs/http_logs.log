@@ -1,0 +1,3 @@
+[WARNING] 2026-06-22 15:56:18,141 django.request | module=log | process=42793 | thread=6164951040 | Bad Request: /api/token/
+[WARNING] 2026-06-22 15:57:14,706 django.request | module=log | process=42793 | thread=6164951040 | Bad Request: /api/token/
+[WARNING] 2026-06-22 15:59:44,304 django.request | module=log | process=42793 | thread=6181777408 | Unauthorized: /api/token/
