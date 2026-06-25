@@ -1,3 +1,153 @@
 [WARNING] 2026-06-22 15:56:18,141 django.request | module=log | process=42793 | thread=6164951040 | Bad Request: /api/token/
 [WARNING] 2026-06-22 15:57:14,706 django.request | module=log | process=42793 | thread=6164951040 | Bad Request: /api/token/
 [WARNING] 2026-06-22 15:59:44,304 django.request | module=log | process=42793 | thread=6181777408 | Unauthorized: /api/token/
+[WARNING] 2026-06-23 16:21:26,858 django.request | module=log | process=47865 | thread=6170439680 | Not Found: /
+[WARNING] 2026-06-23 16:21:27,436 django.request | module=log | process=47865 | thread=6187266048 | Not Found: /apple-touch-icon-precomposed.png
+[WARNING] 2026-06-23 16:21:27,437 django.request | module=log | process=47865 | thread=6204092416 | Not Found: /apple-touch-icon-precomposed.png
+[WARNING] 2026-06-23 16:21:27,438 django.request | module=log | process=47865 | thread=6220918784 | Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-23 16:21:27,442 django.request | module=log | process=47865 | thread=6237745152 | Not Found: /favicon.ico
+[WARNING] 2026-06-23 16:21:27,446 django.request | module=log | process=47865 | thread=6170439680 | Not Found: /favicon.ico
+[WARNING] 2026-06-23 16:21:27,498 django.request | module=log | process=47865 | thread=6187266048 | Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-23 16:21:27,540 django.request | module=log | process=47865 | thread=6187266048 | Not Found: /favicon.ico
+[WARNING] 2026-06-24 15:44:09,584 django.request | module=log | process=54383 | thread=6164787200 | Not Found: /
+[WARNING] 2026-06-24 15:44:10,118 django.request | module=log | process=54383 | thread=6181613568 | Not Found: /apple-touch-icon-precomposed.png
+[WARNING] 2026-06-24 15:44:10,123 django.request | module=log | process=54383 | thread=6198439936 | Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-24 15:44:10,127 django.request | module=log | process=54383 | thread=6215266304 | Not Found: /favicon.ico
+[WARNING] 2026-06-24 15:44:24,077 django.request | module=log | process=54383 | thread=6164787200 | Not Found: /
+[WARNING] 2026-06-24 15:44:28,433 django.request | module=log | process=54383 | thread=6164787200 | Forbidden: /api/schema/swagger/
+[WARNING] 2026-06-24 15:44:44,421 django.request | module=log | process=54383 | thread=6164787200 | Not Found: /
+[WARNING] 2026-06-24 15:44:48,562 django.request | module=log | process=54383 | thread=6164787200 | Forbidden: /api/schema/
+[WARNING] 2026-06-24 15:45:10,471 django.request | module=log | process=54383 | thread=6164787200 | Not Found: /
+[WARNING] 2026-06-24 15:45:29,657 django.request | module=log | process=54383 | thread=6164787200 | Not Found: /
+[WARNING] 2026-06-24 15:45:32,078 django.request | module=log | process=54383 | thread=6164787200 | Method Not Allowed: /api/token/
+[WARNING] 2026-06-24 15:45:53,380 django.request | module=log | process=54383 | thread=6215266304 | Not Found: /
+[WARNING] 2026-06-24 15:45:58,371 django.request | module=log | process=54383 | thread=6164787200 | Forbidden: /api/schema/swagger/
+[WARNING] 2026-06-24 15:52:47,740 django.request | module=log | process=54383 | thread=6164787200 | Forbidden: /api/schema/swagger/
+[WARNING] 2026-06-24 15:56:01,045 django.request | module=log | process=54596 | thread=6170619904 | Not Found: /
+[WARNING] 2026-06-24 15:56:12,444 django.request | module=log | process=54596 | thread=6170619904 | Not Found: /
+[WARNING] 2026-06-24 15:56:15,256 django.request | module=log | process=54596 | thread=6170619904 | Forbidden: /api/schema/swagger/
+[WARNING] 2026-06-24 16:00:56,326 django.request | module=log | process=54632 | thread=6167851008 | Unauthorized: /api/schema/swagger/
+[WARNING] 2026-06-24 16:01:04,649 django.request | module=log | process=54632 | thread=6184677376 | Not Found: /
+[WARNING] 2026-06-24 16:01:14,780 django.request | module=log | process=54647 | thread=6202224640 | Not Found: /
+[WARNING] 2026-06-24 16:01:18,554 django.request | module=log | process=54647 | thread=6202224640 | Unauthorized: /api/schema/swagger/
+[WARNING] 2026-06-24 16:02:21,995 django.request | module=log | process=54647 | thread=6202224640 | Unauthorized: /api/schema/swagger/
+[WARNING] 2026-06-24 16:03:39,223 django.request | module=log | process=54647 | thread=6219051008 | Unauthorized: /api/schema/swagger/
+[WARNING] 2026-06-24 16:04:07,152 django.request | module=log | process=54647 | thread=6219051008 | Unauthorized: /api/schema/swagger/
+[WARNING] 2026-06-24 16:04:42,570 django.request | module=log | process=54647 | thread=6219051008 | Not Found: /
+[WARNING] 2026-06-24 16:06:56,296 django.request | module=log | process=54647 | thread=6219051008 | Not Found: /
+[WARNING] 2026-06-24 16:07:10,968 django.request | module=log | process=54647 | thread=6219051008 | Not Found: /api/v1/task
+[ERROR] 2026-06-24 16:07:29,613 django.request | module=log | process=54647 | thread=6219051008 | Internal Server Error: /api/v1/tasks/
+Traceback (most recent call last):
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: task_manager_task.owner_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/irynadenysova/ICH/HW_Django/manager_app/views/tasks.py", line 33, in get
+    if not tasks:
+           ^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/models/query.py", line 404, in __bool__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/irynadenysova/ICH/HW_Django/.venv/lib/python3.14/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: task_manager_task.owner_id
+[WARNING] 2026-06-24 16:11:01,630 django.request | module=log | process=54790 | thread=6171652096 | Not Found: /
+[WARNING] 2026-06-24 16:11:07,198 django.request | module=log | process=54790 | thread=6171652096 | Not Found: /
+[WARNING] 2026-06-24 16:11:14,962 django.request | module=log | process=54790 | thread=6171652096 | Not Found: /api/v1/tasks/
+[WARNING] 2026-06-24 16:11:27,286 django.request | module=log | process=54790 | thread=6171652096 | Not Found: /api/v1/tasks/
+[WARNING] 2026-06-24 16:11:32,446 django.request | module=log | process=54790 | thread=6171652096 | Not Found: /api/v1/tasks/
+[WARNING] 2026-06-24 16:12:00,499 django.request | module=log | process=54790 | thread=6171652096 | Unauthorized: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:14:16,952 django.request | module=log | process=54790 | thread=6188478464 | Not Found: /apple-touch-icon-precomposed.png
+[WARNING] 2026-06-24 16:14:16,956 django.request | module=log | process=54790 | thread=6205304832 | Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-24 16:14:16,960 django.request | module=log | process=54790 | thread=6222131200 | Not Found: /favicon.ico
+[WARNING] 2026-06-24 16:14:27,985 django.request | module=log | process=54790 | thread=6188478464 | Unauthorized: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:15:02,272 django.request | module=log | process=54790 | thread=6188478464 | Method Not Allowed: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:24:03,099 django.request | module=log | process=55018 | thread=6201323520 | Not Found: /
+[WARNING] 2026-06-24 16:24:16,199 django.request | module=log | process=55018 | thread=6201323520 | Not Found: /
+[WARNING] 2026-06-24 16:24:19,529 django.request | module=log | process=55018 | thread=6201323520 | Not Found: /api-auth/
+[WARNING] 2026-06-24 16:25:03,577 django.request | module=log | process=55018 | thread=6201323520 | Not Found: /api-auth/
+[WARNING] 2026-06-24 16:25:37,625 django.request | module=log | process=55018 | thread=6201323520 | Not Found: /
+[WARNING] 2026-06-24 16:25:50,985 django.request | module=log | process=55018 | thread=6201323520 | Method Not Allowed: /api/token/
+[WARNING] 2026-06-24 16:26:42,178 django.request | module=log | process=55018 | thread=6201323520 | Not Found: /api-auth/
+[WARNING] 2026-06-24 16:27:01,289 django.request | module=log | process=55018 | thread=6201323520 | Not Found: /api-auth/
+[WARNING] 2026-06-24 16:27:41,936 django.request | module=log | process=55018 | thread=6218149888 | Not Found: /
+[WARNING] 2026-06-24 16:28:16,457 django.request | module=log | process=55018 | thread=6234976256 | Unauthorized: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:28:26,002 django.request | module=log | process=55018 | thread=6234976256 | Unauthorized: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:29:49,603 django.request | module=log | process=55018 | thread=6201323520 | Unauthorized: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:33:31,905 django.request | module=log | process=55018 | thread=6218149888 | Not Found: /api/v1/tasks/
+[WARNING] 2026-06-24 16:33:41,408 django.request | module=log | process=55018 | thread=6218149888 | Not Found: /
+[WARNING] 2026-06-24 16:33:51,993 django.request | module=log | process=55018 | thread=6218149888 | Not Found: /
+[WARNING] 2026-06-24 16:34:37,403 django.request | module=log | process=55018 | thread=6251802624 | Unauthorized: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:35:28,425 django.request | module=log | process=55156 | thread=6203224064 | Method Not Allowed: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:36:09,787 django.request | module=log | process=55156 | thread=6203224064 | Not Found: /
+[WARNING] 2026-06-24 16:36:20,427 django.request | module=log | process=55156 | thread=6203224064 | Not Found: /
+[WARNING] 2026-06-24 16:36:27,179 django.request | module=log | process=55156 | thread=6203224064 | Unauthorized: /api/schema/swagger/
+[WARNING] 2026-06-24 16:39:12,404 django.request | module=log | process=55156 | thread=6220050432 | Not Found: /
+[WARNING] 2026-06-24 16:39:18,546 django.request | module=log | process=55156 | thread=6220050432 | Not Found: /api-auth/
+[WARNING] 2026-06-24 16:39:30,519 django.request | module=log | process=55156 | thread=6220050432 | Method Not Allowed: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:40:19,188 django.request | module=log | process=55156 | thread=6203224064 | Not Found: /
+[WARNING] 2026-06-24 16:40:30,378 django.request | module=log | process=55156 | thread=6203224064 | Not Found: /
+[WARNING] 2026-06-24 16:40:32,306 django.request | module=log | process=55156 | thread=6203224064 | Unauthorized: /api/schema/swagger/
+[WARNING] 2026-06-24 16:41:14,447 django.request | module=log | process=55156 | thread=6203224064 | Unauthorized: /api/schema/swagger/
+[WARNING] 2026-06-24 16:42:36,342 django.request | module=log | process=55239 | thread=6137360384 | Not Found: /api-auth/
+[WARNING] 2026-06-24 16:42:47,154 django.request | module=log | process=55239 | thread=6137360384 | Method Not Allowed: /api/v1/tasks/create/
+[WARNING] 2026-06-24 16:43:13,675 django.request | module=log | process=55239 | thread=6137360384 | Not Found: /
+[WARNING] 2026-06-24 16:43:26,381 django.request | module=log | process=55239 | thread=6137360384 | Not Found: /
+[WARNING] 2026-06-24 16:43:50,772 django.request | module=log | process=55239 | thread=6137360384 | Not Found: /
+[WARNING] 2026-06-24 16:44:54,351 django.request | module=log | process=55239 | thread=6137360384 | Bad Request: /api/v1/subtasks/filter/

@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'manager_app',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django_filters',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -137,8 +140,10 @@ STATIC_URL = 'static/'
 
 
 REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -151,7 +156,50 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_HEADER_TYPES': ('Bearer',),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "BLACKLIST_ENABLED": False,  # если поставить True == нужна миграция
+
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
 }
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Task Project",
+    "DESCRIPTION": "Внутренняя документация API.",
+    "VERSION": "1.0.0",
+
+    "OAS_VERSION": "3.0.3",
+
+    "SERVE_INCLUDE_SCHEMA": False,
+
+
+    "SERVE_PUBLIC": False,
+    "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAuthenticated"],
+
+    # ВАЖНО: разрешаем JWT
+    "SERVE_AUTHENTICATION": [
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+
+    "SWAGGER_UI_SETTINGS": {
+        "deepLinking": True,
+        "displayOperationId": True,
+        "persistAuthentication": True,
+        "filter": True,
+        "tryItOutEnabled": True,
+        "docExpansion": "list",
+        "defaultModelsExpandDepth": 2,
+        "displayRequestDuration": True,
+        "tagsSorter": "alpha",
+        "operationsSorter": "alpha",
+    },
+
+    "SCHEMA_PATH_PREFIX": r"api/v[0-9]+",
+    "COMPONENT_SPLIT_REQUEST": True,
+}
+
 
 
 

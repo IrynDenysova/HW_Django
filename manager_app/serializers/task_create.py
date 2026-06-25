@@ -8,6 +8,7 @@ class TaskCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = '__all__'
+        read_only_fields = ['owner']
 
     def validate_deadline(self, value):
         if value < timezone.now():
