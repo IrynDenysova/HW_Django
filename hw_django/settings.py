@@ -153,7 +153,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_HEADER_TYPES': ('Bearer',),
     "ROTATE_REFRESH_TOKENS": False,
@@ -199,8 +199,6 @@ SPECTACULAR_SETTINGS = {
     "SCHEMA_PATH_PREFIX": r"api/v[0-9]+",
     "COMPONENT_SPLIT_REQUEST": True,
 }
-
-
 
 
 
