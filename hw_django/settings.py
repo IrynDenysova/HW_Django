@@ -42,11 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'manager_app',
+    # 'manager_app',
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
     'drf_spectacular',
+    'manager_app.apps.ManagerAppConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,6 +138,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+DEFAULT_FROM_EMAIL = "noreply@example.com"
 
 
 REST_FRAMEWORK = {

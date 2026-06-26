@@ -151,3 +151,7 @@ django.db.utils.OperationalError: no such column: task_manager_task.owner_id
 [WARNING] 2026-06-24 16:43:26,381 django.request | module=log | process=55239 | thread=6137360384 | Not Found: /
 [WARNING] 2026-06-24 16:43:50,772 django.request | module=log | process=55239 | thread=6137360384 | Not Found: /
 [WARNING] 2026-06-24 16:44:54,351 django.request | module=log | process=55239 | thread=6137360384 | Bad Request: /api/v1/subtasks/filter/
+[WARNING] 2026-06-25 16:55:54,543 django.request | module=log | process=60193 | thread=6155595776 | Not Found: /
+[WARNING] 2026-06-25 16:55:54,712 django.request | module=log | process=60193 | thread=6172422144 | Not Found: /apple-touch-icon-precomposed.png
+[WARNING] 2026-06-25 16:55:54,718 django.request | module=log | process=60193 | thread=6189248512 | Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-25 16:55:54,724 django.request | module=log | process=60193 | thread=6206074880 | Not Found: /favicon.ico
