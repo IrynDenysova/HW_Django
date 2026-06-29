@@ -1,6 +1,6 @@
 .env
 .venv
-*/*.log
+**/*.log
 
 
 db.sqlite3
