@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 from environ import Env
 import os
@@ -19,7 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = Env()
 env.read_env(BASE_DIR / '.env')
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -32,7 +31,6 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,8 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'manager_app',
     'rest_framework',
-    'manager_app',
+    'rest_framework.authtoken',
+    'django_filters',
+    'drf_spectacular',
+    'manager_app.apps.ManagerAppConfig',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'manager_app.middleware.SimpleJWTMiddleware'
 ]
 
 ROOT_URLCONF = 'hw_django.urls'
@@ -75,7 +80,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'hw_django.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
@@ -117,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
@@ -129,17 +132,72 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+DEFAULT_FROM_EMAIL = "noreply@example.com"
 
 REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
     'DEFAULT_PAGINATION_CLASS': 'paginators.CustomCursorPaginator',
+    'PAGE_SIZE': 5,
 }
 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "BLACKLIST_ENABLED": True,  # если поставить True == нужна миграция
+
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Task Project",
+    "DESCRIPTION": "Внутренняя документация API.",
+    "VERSION": "1.0.0",
+
+    "OAS_VERSION": "3.0.3",
+
+    "SERVE_INCLUDE_SCHEMA": False,
+
+    "SERVE_PUBLIC": False,
+    "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAuthenticated"],
+
+    # ВАЖНО: разрешаем JWT
+    "SERVE_AUTHENTICATION": [
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+
+    "SWAGGER_UI_SETTINGS": {
+        "deepLinking": True,
+        "displayOperationId": True,
+        "persistAuthentication": True,
+        "filter": True,
+        "tryItOutEnabled": True,
+        "docExpansion": "list",
+        "defaultModelsExpandDepth": 2,
+        "displayRequestDuration": True,
+        "tagsSorter": "alpha",
+        "operationsSorter": "alpha",
+    },
+
+    "SCHEMA_PATH_PREFIX": r"api/v[0-9]+",
+    "COMPONENT_SPLIT_REQUEST": True,
+}
 
 LOGS_DIR = BASE_DIR / "logs"
 LOGS_DIR.mkdir(exist_ok=True)

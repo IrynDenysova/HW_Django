@@ -9,4 +9,5 @@ from manager_app.models import Task
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ['id','title','description', 'status', 'deadline']
+        fields = ['id', 'title', 'description', 'status', 'deadline', 'owner']
+        read_only_fields = ['owner']

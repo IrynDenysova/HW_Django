@@ -11,5 +11,5 @@ from manager_app.models import SubTask
 class SubTaskCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubTask
-        fields ='__all__'
-        read_only_fields = ['created_at']
+        fields = '__all__'
+        read_only_fields = ['created_at', 'owner']

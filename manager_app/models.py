@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
@@ -32,6 +33,7 @@ class Task(models.Model):
     days_of_week = models.CharField(choices=days_of_week, max_length=100,
                                     default='monday',null=True,
                                     blank=True,verbose_name="Day of Week")
+    owner = models.ForeignKey(User, related_name='tasks', on_delete=models.CASCADE)
 
     # Модель Task:
     # Добавить метод str, который возвращает название задачи.
@@ -60,6 +62,7 @@ class SubTask(models.Model):
     status = models.CharField(choices=Task.status_choices, max_length=100, default='new')
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, related_name='subtasks', on_delete=models.CASCADE)
 
     # Модель SubTask:
     # Добавить метод str, который возвращает название подзадачи.
